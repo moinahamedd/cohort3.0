@@ -183,6 +183,10 @@ li:hover {
     cursor: pointer;
 }
 
+.hero-download-button:hover {
+    opacity: 90%;
+}
+
 .hero-another-button {
     width: 170px;
     height: 47px;
@@ -193,6 +197,10 @@ li:hover {
     color: white;
     font-weight: 500;
     cursor: pointer;
+}
+
+.hero-another-button:hover {
+    opacity: 90%;
 }
 
 .hero-links {
