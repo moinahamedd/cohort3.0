@@ -58,6 +58,7 @@ li {
 
 li:hover {
     color: #e1e1e1;
+    transition: all 0.1s ease-in;
 }
 
 .right-part {
@@ -116,14 +117,14 @@ li:hover {
 }
 
 .nav-download-button {
-    background-color: #0069b9;
+    background-color: rgb(0, 120, 212);
     height: 32px;
     border: none;
     width: 106px;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
-    color: #c4cad9;
+    color: white;
 }
 
 .notification-sec {
@@ -146,4 +147,98 @@ li:hover {
 .notification-sec a {
     margin: 0 4px;
     color: #0069b9;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 90px;
+}
+
+.main-text {
+    font-size: 72px;
+    font-weight: 700;
+    color: #C3D0E5;
+    padding: 30px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-download-button {
+    width: 244px;
+    height: 47px;
+    background-color: rgb(0, 120, 212);
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hero-another-button {
+    width: 170px;
+    height: 47px;
+    background-color: rgb(37, 41, 46);
+    border: .8px solid rgb(136, 136, 136);
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hero-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #C3D0E5;
+    cursor: pointer;
+}
+
+.hero-links a {
+    color: rgb(77, 170, 252);
+    font-weight: 600;
+}
+
+.hero-bg {
+    position: relative;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-bg img {
+    position: absolute;
+    top: 50px;
+    /* object-fit: cover; */
+    border-radius: 8px;
+
+}
+
+.bg-image {
+    width: 1200px;
+    height: 750px;
+    z-index: 1;
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.poster-image {
+    width: 1150px;
+    z-index: 2;
+    padding: 60px 50px;
+    /* position: relative; */
 }
