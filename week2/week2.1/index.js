@@ -47,3 +47,15 @@ console.log(ans3);
 
 // I/O HEAVY OPERATIONS EXAMPLES
 // reading a file, starting a clock, HTTP requests
+
+// -------------
+
+// reading a file synchronously example
+const fs = require("fs");
+
+const contents = fs.readFileSync("./a.txt", "utf-8"); 
+console.log(contents);
+
+// fetch('/week2/week2.1/a.txt')   
+//   .then(response => response.text())
+//   .then(data => console.log(data));
