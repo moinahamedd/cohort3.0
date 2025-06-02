@@ -51,16 +51,62 @@ console.log(ans3);
 // -------------
 
 // reading a file synchronously example
-const fs = require("fs"); // fs is file system, it's external library/module which allows us to work with file system on your computer.
+// const fs = require("fs"); // fs is file system, it's external library/module which allows us to work with file system on your computer.
 
-const contents = fs.readFile("./a.txt", "utf-8"); //asynchronously
-console.log(contents);
-const contents2 = fs.readFileSync("./b.txt", "utf-8"); //synchronously
-console.log(contents2);
+// const contents = fs.readFile("./a.txt", "utf-8"); //asynchronously
+// console.log(contents);
+// const contents2 = fs.readFileSync("./b.txt", "utf-8"); //synchronously
+// console.log(contents2);
 
 
 // Think of fetch() like asking a web waiter to bring a file from the kitchen.
 // If you're not in a restaurant (i.e., not in a browser), you can't use a waiter. You need to go into the kitchen (your file system), which is what Node.js and fs does.
-fetch('/week2/week2.1/a.txt')   
-  .then(response => response.text())
-  .then(data => console.log(data));
+// fetch('/week2/week2.1/a.txt')   
+//   .then(response => response.text())
+//   .then(data => console.log(data));
+
+
+// FUNCTIONAL ARGUMENTS
+// passing a function as an argument to another function
+// approach 1 - calling the respective function
+function addi(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b; 
+}
+
+function divide(a, b) {
+    return a / b; 
+}
+
+console.log(`approach 1 example -  ${addi(1, 2)}`);
+
+
+// approach 2 - passing in what needs to be done as an argument
+function addition(a, b) {
+    return a + b;
+}
+
+function subtraction(a, b) {
+    return a - b;
+}
+
+function multiplication(a, b) {
+    return a * b; 
+}
+
+function division(a, b) {
+    return a / b; 
+}
+
+function doOperation(a, b, op) {
+    return op(a, b);
+}
+
+console.log(`approach 2 example ${subtraction(1, 2)}`);
