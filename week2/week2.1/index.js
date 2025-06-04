@@ -111,6 +111,7 @@ function doOperation(a, b, op) {
 console.log(`approach 2 example ${subtraction(1, 2)}`);
 
 
+const { log } = require("console");
 // asynchronous behaviour or readFile
 const fs = require("fs");
 
@@ -123,3 +124,22 @@ fs.readFile("a.txt", "utf-8", print);
 fs.readFile("b.txt", "utf-8", print); 
 
 console.log("done");
+
+
+// TIMEOUT FUNCTION EXAMPLE
+function timeout() {
+    console.log('click the button');
+}
+
+console.log('hi');
+
+setTimeout(timeout, 1000);
+
+console.log('welcome to loupe');
+
+let c = 0;
+for(i = 0; i < 1000000; i++) {
+    c = c + 1;
+}
+
+console.log('expensiev operation done');
