@@ -131,7 +131,7 @@ function timeout() {
     console.log('click the button');
 }
 
-console.log('hi');
+console.log('hi'); 
 
 setTimeout(timeout, 1000);
 
@@ -143,3 +143,20 @@ for(i = 0; i < 1000000; i++) {
 }
 
 console.log('expensiev operation done');
+/* OUTPUT WOULD BE
+hi
+welcome to the loupe 
+expensive operation done
+click the button
+
+Node.js has a non-blocking, single threaded, event-driven architecture, so here's what happens
+1. 'hi' logs immediately and prints 'hi' in the log
+2. setTimeout() goes to the queue and moves on with the next line of code. sets a timer(1 sec delay) and waits while Node.js continues running other code
+3. 'welcome to the loupe' prints in the log
+4. long FOR LOOP runs and blocks the call stack until completed. only after the loop and all sync code is done, the event loop pushes timeout() from the callback queue to the call stack
+
+* call stack - executes sync code one line at a time
+* Web API's/libuv - handles async tasks like timers, I/O etc
+* callback queue - stores callbacks(like timeout()) when ready
+* event loop - moves ready callbacks to stack when stack is empty
+*/
