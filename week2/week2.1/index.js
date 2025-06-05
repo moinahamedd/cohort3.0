@@ -160,3 +160,23 @@ Node.js has a non-blocking, single threaded, event-driven architecture, so here'
 * callback queue - stores callbacks(like timeout()) when ready
 * event loop - moves ready callbacks to stack when stack is empty
 */
+
+
+// CALLBACKS
+/* 
+    A callback is a function passed to another function to run after an operation is done.
+    fs.readFile("a.txt", "utf-8", (err, data) => {
+        if (err) throw err;
+        console.log(data);
+    });
+*/ 
+function greet(name, callback) { // function with two arguments, greet(string, function)
+  console.log("Hi " + name);
+  callback(); // calls the function that was passed as callback(in this case, sayBye())
+}
+
+function sayBye() { // simple function that logs 'Bye!' when called
+  console.log("Bye!");
+}
+
+greet("Alice", sayBye); // calling greet function, 'Alice' as the string for greet(name, ) and sayBye function for the callback function - greet( , callback)  
