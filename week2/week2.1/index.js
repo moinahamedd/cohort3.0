@@ -212,3 +212,17 @@ function pizzzaReady(pizzza) {
 
 orderPizzza(pizzzaReady);
 console.log('call qoli');
+
+// CALLBACK FUNCTION HELL EXAMPLE
+const cart = ['shoes', 'shirts', 'jeans'];
+api.createOrder(cart, function () {
+
+    api.proceedToPayment(function () {
+
+        api.showOrderSummary(
+            function() {
+                api.updateWallet()
+            }
+        )
+    })
+})
