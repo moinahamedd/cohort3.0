@@ -111,17 +111,17 @@ function doOperation(a, b, op) {
 console.log(`approach 2 example ${subtraction(1, 2)}`);
 
 
-const { log } = require("console");
+// const { log } = require("console");
 // asynchronous behaviour or readFile
-const fs = require("fs");
+// const fs = require("fs");
 
 function print(err, data) {
     console.log(data);
 }
 
-fs.readFile("a.txt", "utf-8", print);
+// fs.readFile("a.txt", "utf-8", print);
 
-fs.readFile("b.txt", "utf-8", print); 
+// fs.readFile("b.txt", "utf-8", print); 
 
 console.log("done");
 
@@ -179,4 +179,16 @@ function sayBye() { // simple function that logs 'Bye!' when called
   console.log("Bye!");
 }
 
-greet("Alice", sayBye); // calling greet function, 'Alice' as the string for greet(name, ) and sayBye function for the callback function - greet( , callback)  
+greet("Alice", sayBye); // calling greet function, 'Alice' as the string for greet(name, ) and sayBye function for the callback function - greet( , callback)
+
+
+// ASYNCHRONOUS EXAMPLE
+let pizza; 
+function orderPizza() {
+    setTimeout(() => {
+        pizza = 'pizza';
+    }, 2000); 
+}
+
+orderPizza(); 
+console.log(`eat ${pizza}`);
