@@ -185,10 +185,30 @@ greet("Alice", sayBye); // calling greet function, 'Alice' as the string for gre
 // ASYNCHRONOUS EXAMPLE
 let pizza; 
 function orderPizza() {
+    console.log('order pizza')
     setTimeout(() => {
         pizza = 'pizza';
     }, 2000); 
+    console.log('pizza was ordered');
+    
 }
 
 orderPizza(); 
 console.log(`eat ${pizza}`);
+
+// ASYNCHRONOUS EXAMPLE
+let pizzza;
+function orderPizzza(callback) {
+    console.log('order pizza');
+    setTimeout(() => {
+        pizzza = 'pizza';
+        callback(pizzza);
+    }, 2000);
+}
+
+function pizzzaReady(pizzza) {
+    console.log(`ear the ${pizzza}`);
+}
+
+orderPizzza(pizzzaReady);
+console.log('call qoli');
