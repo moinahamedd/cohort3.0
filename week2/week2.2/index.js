@@ -23,3 +23,33 @@ const rect = new Rectangle(2,4,'red');
 const area = rect.area();
 console.log(area);
 rect.paint();
+
+
+/*
+    PROMISES
+     - A Promise in Javascript is an object that represents the eventual completion(or failure) of an asynchronous operation and its resulting value.
+     Promises are used to handle asynchronous more effectively than traditional callback function, providing a cleaner and more manageable way to deal with code that executes
+     asynchronously, such as API calls, I/O file, or timers
+*/
+
+function setTimeoutPromisified(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function callback() {
+    console.log('3 seconds later');
+}
+
+setTimeoutPromisified(3000).then(callback)
+
+// promisified setTimoue example
+
+function waitFor3(resolve) {
+    setTimeout(resolve, 3000)
+}
+
+function main() {
+    console.log('main is called');
+}
+
+waitFor3(main);
