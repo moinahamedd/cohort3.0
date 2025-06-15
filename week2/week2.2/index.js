@@ -36,14 +36,14 @@ function setTimeoutPromisified(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function callback() {
+function waitingTime() {
     console.log('3 seconds later');
 }
 
-setTimeoutPromisified(3000).then(callback)
+setTimeoutPromisified(3000).then(waitingTime)
 
-// promisified setTimoue example
-
+// promisified setTimoue examples
+//vr1
 function waitFor3(resolve) {
     setTimeout(resolve, 3000)
 }
@@ -53,3 +53,16 @@ function main() {
 }
 
 waitFor3(main);
+
+//vr2
+function randomTime(resolve) {
+  setTimeout(resolve, 4000); // Resolves the promise after 4 seconds
+}
+
+let p = new Promise(randomTime); // Create a promise using the above function
+
+function callback() {
+  console.log('promise succeeded');
+}
+
+p.then(callback); // Attach a success callback
