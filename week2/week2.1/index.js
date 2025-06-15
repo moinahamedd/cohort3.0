@@ -51,7 +51,7 @@ console.log(ans3);
 // -------------
 
 // reading a file synchronously example
-// const fs = require("fs"); // fs is file system, it's external library/module which allows us to work with file system on your computer.
+// const fs = require("fs"); // fs is file system, it's external library/module which allows us to work with file system on our computer.
 // const contents = fs.readFile("./a.txt", "utf-8"); //asynchronously
 // console.log(contents);
 // const contents2 = fs.readFileSync("./b.txt", "utf-8"); //synchronously
@@ -108,7 +108,7 @@ function doOperation(a, b, op) {
     return op(a, b);
 }
 
-console.log(`approach 2 example ${subtraction(1, 2)}`);
+console.log(`approach 2 example ${doOperation(1, 2, subtraction)}`);
 
 
 // const { log } = require("console");
@@ -190,7 +190,6 @@ function orderPizza() {
         pizza = 'pizza';
     }, 2000); 
     console.log('pizza was ordered');
-    
 }
 
 orderPizza(); 
