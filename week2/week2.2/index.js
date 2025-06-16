@@ -66,3 +66,24 @@ function callback() {
 }
 
 p.then(callback); // Attach a success callback
+
+
+
+function randomTime() {
+  return new Promise(resolve => {
+    setTimeout(resolve, 4000);
+  });
+}
+
+async function run() {
+  await randomTime(); // waits for 4 seconds
+  console.log('promise succeeded');
+}
+
+run();
+
+
+/*
+  asynchronous readfile
+*/
+
