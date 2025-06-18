@@ -83,7 +83,38 @@ async function run() {
 run();
 
 
-/*
-  asynchronous readfile
+/* 
+  article references
 */
+// Declare function
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = {name: "John", age: 30};
+    callback(data);
+  }, 3000);
+}
 
+// Execute function with a callback
+fetchData(function(data) {
+  console.log(data);
+});
+
+console.log("Data is being fetched...");
+
+// In this example:
+// We have a function called fetchData that uses the setTimeout method to simulate an asynchronous operation. The function takes a callback as an argument.
+// The callback function is then passed the data retrieved by the function after the timeout has been completed.
+
+// The setTimeout method is used to execute the callback after a specified time (in this case, 3 seconds). The callback will be executed asynchronously, which means that the program will continue to execute the next line of code without waiting for the timeout to complete.
+//example of callback hell
+// getData(function(a) {
+//   getMoreData(a, function(b) {
+//     getEvenMoreData(b, function(c) {
+//       getEvenEvenMoreData(c, function(d) {
+//         getFinalData(d, function(finalData) {
+//           console.log(finalData);
+//         });
+//       });
+//     });
+//   });
+// });
