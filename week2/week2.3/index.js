@@ -40,7 +40,9 @@ function step3() {
 
 setTimeout(step1, 1000);
 
-// using setTimeoutPromisified function to improve the readeblity
+
+
+/* using setTimeoutPromisified function to improve the readeblity */
 function setTimeoutPromisified(duration) {
     return new Promise(function (resolve) {
         setTimeout(resolve, duration)
@@ -71,3 +73,21 @@ setTimeoutPromisified(1000).then(function () {
 }).then(function () {
     console.log('last one');
 });
+
+/* 
+Async Await Syntax
+Async and Await provides a way to write asynchronous code that looks and behaves like synchronous code, makeing it easier to read and maintain.
+
+it builds on top of Promises and allows you to avoid chaining .then() and .catch() methods while still working with asynchronous operations.
+*/
+
+async function solve() {
+    await setTimeoutPromisified(1000); 
+    console.log('a hi');
+    await setTimeoutPromisified(3000);
+    console.log('a hello');
+    await setTimeoutPromisified(5000);
+    console.log('a last one');   
+}
+
+solve();
