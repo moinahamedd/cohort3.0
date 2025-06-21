@@ -39,3 +39,24 @@ function step3() {
 }
 
 setTimeout(step1, 1000);
+
+// using setTimeoutPromisified function to improve the readeblity
+function setTimeoutPromisified(duration) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, duration)
+    });
+};
+
+
+//chaining promise calls
+setTimeoutPromisified(1000).then(function () {
+    console.log('hi');
+    setTimeoutPromisified(3000).then(function () {
+        console.log('hello');
+        setTimeoutPromisified(5000).then(function () {
+            console.log('last one');
+        });
+    });
+});
+
+console.log('outside the loop');
